@@ -1,0 +1,16 @@
+{
+  "name": "imc-tools-inte",
+  "description": "Système de votes pour la journée d'intégration",
+  "main": "index.js",
+  "authors": [
+    "Michael Vieira <contact+dev[at]mvieira[dot]fr>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.0",
+    "chart.js": "chartjs#^2.7.0",
+    "pure": "^1.0.0"
+  }
+}

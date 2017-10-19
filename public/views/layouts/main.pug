@@ -1,0 +1,16 @@
+doctype html
+html
+    head
+        title !{siteOptions.pageTitle} - !{siteOptions.siteName}
+        meta(charset="utf-8")
+
+        block stylesheets
+            link(rel="stylesheet", href="/assets/vendor/pure/pure-min.css")
+            link(rel="stylesheet", href="/assets/css/app.css")
+
+    body
+        block content
+
+
+        block scripts
+            script(src="/assets/js/app.js")

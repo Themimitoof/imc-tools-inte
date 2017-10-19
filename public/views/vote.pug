@@ -1,0 +1,13 @@
+extend layouts/main
+
+block content
+    
+    video.video-bg(src="/assets/video/identification-bg.mp4" loop autoplay muted )
+
+    .container.votes
+        h2.text-center Selon vous, quelle équipe mérite de gagner ?
+
+        form.pure-form(method="post")
+            .pure-g#choices
+                each team in data
+                    button.pure-u-1-6.pure-button.pure-button-primary(type="submit" name="team" value=team.id) #{team.team_name}

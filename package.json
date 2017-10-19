@@ -1,0 +1,18 @@
+{
+  "name": "imc-tools-inte",
+  "version": "2.0.0",
+  "description": "Système de votes pour la journée d'intégration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Vieira <contact+dev[at]mvieira[dot]fr>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "pug": "^2.0.0-rc.4",
+    "sqlite": "^2.8.0"
+  }
+}

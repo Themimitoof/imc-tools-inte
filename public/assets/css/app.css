@@ -1,0 +1,77 @@
+/**
+  * General purposes
+  */
+
+.container {
+    position: absolute;
+    top:50%; left: 50%;
+    padding: 2em;
+    border-radius: 2px;
+    background: rgba(241, 241, 241, .98);
+    box-shadow: 4px 4px 7px -1px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 50;
+}
+
+.container h2 {
+    margin-top: 0; 
+    color: #565656;
+    text-align: center;
+}
+.container button.pure-button { margin-top: 1em; }
+
+input {
+    border-radius: 0;
+    box-shadow: 0;
+    text-align: center;
+}
+
+.alert {
+    width: 100%;
+    margin: 10px 0;
+    padding: 1em;
+    font-size: small;
+    text-align: center;
+}
+
+.alert.error {
+    background: #ff4d40;
+    color: #fff;
+}
+
+.alert.warning {
+    background: #ffc340;
+    color: #fff;
+}
+
+
+
+/**
+  * Identification form
+  */
+
+.container.identification { width: 40%; }
+
+video.video-bg {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    object-fit: cover;
+    z-index: 1;
+}
+
+
+/**
+  * Votes page
+  */
+
+.container.votes { width: 60%; }
+.votes #choices {
+    display: flex;
+    justify-content: center;
+}
+.votes #choices button {
+    display: inline-block;
+    margin: 5px;
+}

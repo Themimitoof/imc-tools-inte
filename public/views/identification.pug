@@ -1,0 +1,23 @@
+extend layouts/main
+
+block content
+    
+    video.video-bg(src="/assets/video/identification-bg.mp4" loop autoplay muted )
+
+    .container.identification
+        h2.text-center Identifiez-vous
+
+        form.pure-form(method="post")
+            .pure-g
+                input.pure-u-1(type="text" name="identifiant" placeholder="Identifiant" autocomplete="off" require)
+            
+            .pure-g
+                button.pure-u-1.pure-button.pure-button-primary(type="submit") S'identifier
+            
+            if (siteOptions.alert == 'nonexistant')
+                .pure-g
+                    .pure-u-1.alert.warning Identifiant inconnu. Si vous avez un trou de mémoire, demandez à la personne en charge de la feuille démargement.
+            
+            if (siteOptions.alert == "alreadyvoted")
+                .pure-g
+                    .pure-u-1.alert.error Vous avez déjà voté ! Attrapé la main dans le sac petit&middot;e escroc !
