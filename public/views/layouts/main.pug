@@ -9,9 +9,10 @@ html
             link(rel="stylesheet", href="/assets/vendor/animate.css/animate.min.css")
             link(rel="stylesheet", href="/assets/css/app.css")
 
-    body(class=siteOptions.customClass)
+    body(id=siteOptions.customClass)
         block content
 
 
         block scripts
+            script(src="/assets/vendor/chart.js/dist/Chart.min.js")
             script(src="/assets/js/app.js")

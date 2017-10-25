@@ -81,7 +81,7 @@ video.video-bg {
   * Results page
   */
 
-body.results {
+body#results {
     background: url("../img/results_bg.gif") no-repeat center fixed;
     background-size: cover;
 }
@@ -89,4 +89,27 @@ body.results {
 .container.results { 
     width: 60%;
     background: rgba(241, 241, 241, .8);
- }
+}
+
+.results #mainData { 
+    opacity: 0;
+    transition: .5s opacity linear;
+}
+
+.results #mainData.visible { opacity: 1; }
+
+.results #congratsMsg {
+    color: #0ec3ff;
+    margin-top: 1.5em;
+    animation: 2s infinite rainbow;
+}
+.results table {
+    width: 100%;
+    margin: 0 1em;
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    50%   { filter: hue-rotate(40deg); }
+    100%   { filter: hue-rotate(0deg); }
+}

@@ -10,12 +10,11 @@ if(document.querySelector("#choices") != null) {
             xhr.setRequestHeader("Content-Type", "application/json");
             
             xhr.onreadystatechange = () => {
-                console.log("this: ", this);
                 if(this.readyState === XMLHttpRequest.DONE) {
                     if(this.status === 200) {
-                        alert("c reusi")
+                        console.log("U WIN BRO")
                     } else if(this.status === 403) {
-                        alert("t pu connecte")
+                        console.log("T403MEC")
                     } else alert("Arf... Vous avez cassé un truc... Voyez avec l'informaticien, il va corriger le problème sans remorts ;)");
                 }
             }
@@ -30,25 +29,44 @@ if(document.querySelector(".results") != null) {
     // Before showing the results, litle joke with the title
     var title = document.querySelector("#title"),
         texts = [
-        "Les résultats c'est pour bientôt !",
         "Cette fois-ci je vais eviter de créer une émeute...",
-        "Les résultats arrivent... Contemplez votre président en attendant",
-        "Il y a une carotte dans le potage c'est long....",
+        "Donc j'ai pris mes précautions...",
+        "Mais mon petit doigt me dit qu'elle va éclater dans quelques secondes...",
+        "En attendant les résultats, comtemplez votre cher président !",
         "AH ! Voici les résultats :"
     ];
 
+    var done = false, i = 0; // For manual loop into setInterval
 
-    for(i = 0; i < texts.length; i++) {
-        setInterval((x) => {
-            console.log(i, texts[x])
-            // title.classList.remove("fadeOut");     
-            // title.classList.add("fadeIn");        
-            title.innerHTML = texts[x];
-        }, 500 * i, i);
+    setInterval(() => {
+        if(done != true || i < texts.length) {
+            title.classList.remove("fadeOutUp");
+            title.classList.add("fadeInUp");
+            title.innerHTML = texts[i];
 
-        // setTimeout(() => {
-        //     title.classList.remove("fadeIn");
-        //     title.classList.add("fadeOut");
-        // }, 800);
-    }
+            if(i >= texts.length - 1) done = true;
+            else {
+                i++;
+                setTimeout(() => {
+                    title.classList.remove("fadeInUp");
+                    title.classList.add("fadeOutUp");
+                }, 2350);
+            }
+        }
+    }, 2500);
+
+
+    // Create and show chart after title
+    setTimeout(() => {
+        document.querySelector("#mainData").classList.add("visible");
+        var pieChart = new Chart(document.querySelector("#pieChart").getContext("2d"), {
+            type: "pie",
+            data: pieChartData,
+            options: {
+                responsive: true
+            }
+        });
+    
+        document.querySelector("#congratsMsg").innerHTML = `Félicitations à l'équipe ${votesList[0].team} !`
+    }, 13200);
 }

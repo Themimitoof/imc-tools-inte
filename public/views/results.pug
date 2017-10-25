@@ -2,15 +2,29 @@ extend layouts/main
 
 block content
     .container.results
-        h2.text-center.animated#title &nbsp;
+        h2.text-center.animated#title Macron, affiche-nous les résultats !
     
-        .pure-g.hidden.animated
-            .pure-u-1-2
-                //- Graph
+        .pure-g#mainData
+            .pure-u-1-2.chart
+                //- Pie Chart
+                canvas#pieChart(width="400" height="400")
 
             .pure-u-1-2
-                //- List            
+                table.pure-table.pure-table-horizontal
+                    thead
+                        th Equipe
+                        th Votes
+                    tbody
+                        each team in JSON.parse(data.rowList)
+                            tr
+                                td=team.team
+                                td !{team.votes}
+            
+            .pure-u-1
+                h2.text-center#congratsMsg Félicitations à l'équipe undefined lol
 
-        .pure-g.hidden.animated
-            .pure-u-1-2
-                //- Graph with number of voted and missing persons
+                
+    block prepend script
+        script.
+            var pieChartData = !{data.pieChart},
+                votesList = !{data.rowList};
