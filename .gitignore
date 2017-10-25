@@ -1,4 +1,5 @@
+.vscode/
 node_modules/
 public/assets/vendor/
 database.sqlite*
-result.lock
+.lockfile

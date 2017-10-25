@@ -75,3 +75,18 @@ video.video-bg {
     display: inline-block;
     margin: 5px;
 }
+
+
+/**
+  * Results page
+  */
+
+body.results {
+    background: url("../img/results_bg.gif") no-repeat center fixed;
+    background-size: cover;
+}
+
+.container.results { 
+    width: 60%;
+    background: rgba(241, 241, 241, .8);
+ }
