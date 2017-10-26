@@ -10,12 +10,20 @@ if(document.querySelector("#choices") != null) {
             xhr.setRequestHeader("Content-Type", "application/json");
             
             xhr.onreadystatechange = () => {
-                if(this.readyState === XMLHttpRequest.DONE) {
-                    if(this.status === 200) {
-                        console.log("U WIN BRO")
-                    } else if(this.status === 403) {
-                        console.log("T403MEC")
-                    } else alert("Arf... Vous avez cassé un truc... Voyez avec l'informaticien, il va corriger le problème sans remorts ;)");
+                if(xhr.readyState === XMLHttpRequest.DONE) {
+                    var el  = document.querySelector(".voteMsg"),
+                        msg = document.querySelector(".voteMsg h2");
+
+                    // Show the voteMsg div
+                    el.classList.add("visible");
+
+                    if(xhr.status === 200) {
+                        msg.innerHTML = "Votre vote a été pris en compte. Merci pour votre participation (déso j'ai pas de récompense à donner)";
+                        setTimeout(() => { window.location.href = "/"; }, 6000);
+                    } else if(xhr.status === 403) {
+                        msg.innerHTML = "Soit vous êtes déconnecté soit vous avez essayé de cliquer plusieurs fois pour essayer d'avoir plus de votes. AH LOL!";
+                        setTimeout(() => { window.location.href = "/"; }, 6000);
+                    } else msg.innerHTML = "Vous avez cassé un truc... Promis on ne vous en veut pas mais prévenez l'informaticien quand même !";
                 }
             }
             
