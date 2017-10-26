@@ -10,7 +10,13 @@ const express    = require("express"),
       pug        = require("pug"),
       bodyParser = require("body-parser"),
       session    = require("express-session"),
-      app        = express();
+      app        = express(),
+      config     = require("./config.js");
+
+
+// Init global variables
+var HTTP_PORT   = process.env.PORT || config.httpPort || 8088;
+global.siteName = process.env.NAME || config.siteName || "GPaDéNom :'(";
 
 
 // Configure ExpressJS
@@ -32,8 +38,8 @@ require("./core")(app);
 
 
 // Open webserver
-app.listen(8088, (err) => {
+app.listen(HTTP_PORT, (err) => {
     if(err) throw err;
 
-    console.log("OMAGAD! A wild web server as apparered on: http://localhost:8088/");
+    console.log(`OMAGAD! A wild web server as apparered on: http://localhost:${HTTP_PORT}/`);
 });

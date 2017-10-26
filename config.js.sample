@@ -1,0 +1,13 @@
+/**
+ * IMC Tools Inté - Outil de votes pour la journée d'intégration
+ * Version: 2.0.0
+ * Auteur: Michael Vieira <contact+dev[at]mvieira[dot]fr>
+ * Licence: MIT
+ */
+
+const config = {
+    httpPort: 8088,
+    siteName: "Journée d'intégration IMC Randstad"
+}
+
+module.exports = config;
