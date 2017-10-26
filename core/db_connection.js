@@ -1,3 +1,10 @@
+/**
+ * IMC Tools Inté - Outil de votes pour la journée d'intégration
+ * Version: 2.0.0
+ * Auteur: Michael Vieira <contact+dev[at]mvieira[dot]fr>
+ * Licence: MIT
+ */
+
 const db   = require("sqlite"),
       path = require("path");
 

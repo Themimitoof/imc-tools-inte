@@ -1,3 +1,11 @@
+/**
+ * IMC Tools Inté - Outil de votes pour la journée d'intégration
+ * Version: 2.0.0
+ * Auteur: Michael Vieira <contact+dev[at]mvieira[dot]fr>
+ * Licence: MIT
+ */
+
+// Votes page
 if(document.querySelector("#choices") != null) {
     var choices = document.querySelectorAll("#choices button");
 
@@ -31,6 +39,7 @@ if(document.querySelector("#choices") != null) {
         });
     });
 }
+
 
 // Results page
 if(document.querySelector(".results") != null) {
